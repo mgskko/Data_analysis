@@ -1,14 +1,38 @@
 public class gameplay {
-    public static void main(String[] args)
+    /*instance variable */
+    private GameCharacter player, monster;
+    private String gameName;
+    //Random number generator
+
+    public gameplay(){
+        gameName = "";
+    }
+
+    public gameplay(String name){
+        gameName = name;
+    }
+
+    public int generateAttackHiPoint(int strength){
+        int hitPoint = 0;
+        hitPoint = (int)(Math.random() * strength) + 1;  //from 1 to strength
+           return hitPoint;
+       }  
+       
+    public void play()
     {
         GameCharacter player, monster;
 
         player = new GameCharacter("Foober the Warrior");
         monster = new GameCharacter("Slime the Great"); 
+
+        //pass instance information of GamePlay to GameCharacter instances
+        player.setGame(this);
+        monster.setGame(this);
+
     
-    System.out.println("##########");
-    System.out.println("### Game starts");
-    System.out.println("##########");
+    System.out.println("####################");
+    System.out.println("### Game starts ###");
+    System.out.println("####################");
     System.out.println();
 
     int round = 1;
@@ -27,7 +51,7 @@ public class gameplay {
        System.out.println(monster.getName() + " gets damage of " + damage);
 
         if (monster.isDead() == true){
-            //System.out.println(player.getName() + "killed " + monster.getName()  + "!");
+            System.out.println(player.getName() + " killed " + monster.getName()  + "!");
             break;
         }
     /*monster attacks player */

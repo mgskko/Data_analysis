@@ -3,6 +3,7 @@ public class GameCharacter {
     private String name;
     private int healthPoint;
     private int strength;
+    private gameplay game;
 
     /*Constructors */
     public GameCharacter(String charachterName){
@@ -21,7 +22,7 @@ public class GameCharacter {
     }
 
     public int attack(GameCharacter opponent){
-        int damage = generateAttackHiPoint();
+        int damage = game.generateAttackHiPoint(strength);
         //int  opponentCurrentHp = opponent.getHealthPoint();
         //int opponentUpdateHp = opponentCurrentHp - damage;
         //opponent.setHealthPoint(opponentUpdateHp);
@@ -34,35 +35,7 @@ public class GameCharacter {
         return healthPoint <= 0;
     }
 
-    private int generateAttackHiPoint(){
-     int hitPoint = 0;
-     hitPoint = (int)(Math.random() * strength) + 1;  //from 1 to strength
-        return hitPoint;
-    }
 
-/* 
-
-    public int attack(GameCharacter opponent){
-        int damage = game.generateAttackHitPoint(strength);
-        //int opponentCurrentHp = opponent.getHealthPoint();
-        //int opponentUpdateHp = opponentCurrentHp - damage;
-        // opponent.setHealthPoint(opponentUpdateHp);
-        opponent.setHealthPoint(opponent.getHealthPoint() - damage);
-        return damage;
-    }
-    private int randomGenerator(int size){
-        return (int)(Math.random()*(size + 1));
-    }
-
-   
-
-    public int attack(GameCharacter enemy){
-        int hitPoint = generateAttackHiPoint();
-        enemy.setHealthPoint(enemy.getHealthPoint() - hitPoint);
-
-        return hitPoint;
-    }
-     
    
     /*getters and setters */
     public String getName(){
@@ -81,5 +54,22 @@ public class GameCharacter {
 
     public void setHealthPoint(int updateHealthPoint){
 healthPoint = updateHealthPoint;
+    }
+
+    public int getStrength(){
+        return strength;
+    }
+
+    public void setStrength(int updateStrength){
+        strength = updateStrength;
+    }
+
+    public gameplay getGame(){
+        return game;
+    }
+
+    public void setGame(gameplay g)
+    {
+        game = g;
     }
 }
