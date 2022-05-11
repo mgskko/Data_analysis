@@ -1,6 +1,7 @@
 public class gameplay {
     /* instance variable */
-    private GameCharacter player, monster;
+    private Mage player;
+    private GameCharacter monster;
     private String gameName;
     // Random number generator
 
@@ -21,7 +22,7 @@ public class gameplay {
     public void play() {
         GameCharacter player, monster;
 
-        player = new GameCharacter("Foober the Warriorpz");
+        player = new GameCharacter("Foober the Warrior");
         monster = new GameCharacter("Slime the Great");
 
         // pass instance information of GamePlay to GameCharacter instances
