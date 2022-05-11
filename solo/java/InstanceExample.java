@@ -20,7 +20,7 @@ public class InstanceExample {
     }
 
     public static void main(String[] args) {
-        InstanceExample example = new InstanceExample("Hello world");
+        InstanceExample example = new InstanceExample("Hello world!");
         example.printHelloWorld();
     }
 }
